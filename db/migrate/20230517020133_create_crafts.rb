@@ -7,6 +7,7 @@ class CreateCrafts < ActiveRecord::Migration[6.1]
       t.string :description
       t.string :notes
       t.integer :category_id
+      t.boolean :completed
       t.timestamps # generates created_at and updated_at columns
     end
   end
