@@ -26,6 +26,7 @@ ActiveRecord::Schema.define(version: 2023_05_17_020133) do
     t.string "difficulty"
     t.string "description"
     t.string "notes"
+    t.string "link"
     t.integer "category_id"
     t.boolean "completed"
     t.datetime "created_at", precision: 6, null: false
