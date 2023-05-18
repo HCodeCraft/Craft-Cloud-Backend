@@ -28,3 +28,6 @@ Category.create([
   ])
 
 puts "✅ Done seeding!"
+
+
+Craft.create(name:"Tabby Kitten", image:"https://fireflycrochet.com/cdn/shop/products/57BF0560-12C6-419B-BD85-E34B6456D3FF_720x.jpg?v=1593005122", difficulty:"medium", description: "Little multicolored cat stuffed animal", link:"https://fireflycrochet.com/en-us/products/crochet-pattern-tabby-cat-amigurumi", notes:"", category_id: 1, completed: false)
