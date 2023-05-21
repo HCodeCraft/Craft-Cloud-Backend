@@ -2,13 +2,13 @@ class CategoriesController < ApplicationController
   
     get '/categories' do
         categories = Category.all
-        categories.to_json
+        categories.to_json(include: :crafts)
     end
 
-    # For individual category page
+    # For individual category page?
     get '/categories/:id' do
         category = Category.find(params[:id])
-        category.to_json(include :crafts)
+        category.to_json
     end
 
     post '/categories' do

@@ -28,6 +28,17 @@ class CraftsController < ApplicationController
         craft.destroy
     end
 
+    post '/crafts' do
+        craft = Craft.create(
+            name: params[:name],
+            image: params[:image],
+            description: params[:description]
+            difficulty: params[:difficulty],
+            notes: params[:notes],
+            completed: params[:completed]
+        )
+        craft.to_json
+    end
 
 
 
