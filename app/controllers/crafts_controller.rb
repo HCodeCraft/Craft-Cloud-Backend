@@ -28,14 +28,16 @@ class CraftsController < ApplicationController
         craft.destroy
     end
 
-    post '/crafts' do
-        craft = Craft.create(
+    post '/categories/:category_id/crafts' do
+        category = Category.find_by(id: params[:category_id])
+        craft = category.crafts.create(
             name: params[:name],
             image: params[:image],
             description: params[:description],
             difficulty: params[:difficulty],
             notes: params[:notes],
-            completed: params[:completed]
+            completed: params[:completed],
+            category_id: category.id
         )
         craft.to_json
     end
