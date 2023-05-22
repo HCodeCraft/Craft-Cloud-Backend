@@ -32,7 +32,7 @@ class CraftsController < ApplicationController
         craft = Craft.create(
             name: params[:name],
             image: params[:image],
-            description: params[:description]
+            description: params[:description],
             difficulty: params[:difficulty],
             notes: params[:notes],
             completed: params[:completed]
