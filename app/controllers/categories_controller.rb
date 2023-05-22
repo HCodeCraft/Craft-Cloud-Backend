@@ -1,3 +1,5 @@
+
+
 class CategoriesController < ApplicationController
   
     get '/categories' do
@@ -12,6 +14,7 @@ class CategoriesController < ApplicationController
     end
 
     post '/categories' do
+        binding.pry
         category = Category.create(
             name: params[:name],
             image: params[:image],
