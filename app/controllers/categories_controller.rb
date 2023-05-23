@@ -31,7 +31,7 @@ class CategoriesController < ApplicationController
             image: params[:image],
             description: params[:description]
         )
-        category.to_json
+        category.to_json(include: :crafts)
     end
     
     delete '/categores/:id' do
