@@ -10,7 +10,7 @@ class CategoriesController < ApplicationController
     # For individual category page?
     get '/categories/:id' do
         category = Category.find(params[:id])
-        category.to_json
+        category.to_json(include: :crafts)
     end
 
     post '/categories' do
@@ -20,7 +20,7 @@ class CategoriesController < ApplicationController
             image: params[:image],
             description: params[:description]
         )
-        category.to_json
+        category.to_json(include: :crafts)
     end
 
     # be able to edit category? 
@@ -36,7 +36,7 @@ class CategoriesController < ApplicationController
     
     delete '/categores/:id' do
         category = Category.find(params[:id])
-        category.destroy
+        category.destroy(include: :crafts)
     end
 
 end
