@@ -18,9 +18,9 @@ class CraftsController < ApplicationController
             difficulty: params[:difficulty],
             description: params[:description],
             notes: params[:notes],
-            category_id: params[:category_id],
             completed: params[:completed]
         )
+        craft.to_json
     end
 
     delete '/crafts/:id' do

@@ -14,11 +14,11 @@ class CategoriesController < ApplicationController
     end
 
     post '/categories' do
-        binding.pry
         category = Category.create(
             name: params[:name],
             image: params[:image],
-            description: params[:description]
+            description: params[:description],
+            id: params[:id]
         )
         category.to_json(include: :crafts)
     end
@@ -34,9 +34,9 @@ class CategoriesController < ApplicationController
         category.to_json(include: :crafts)
     end
     
-    delete '/categores/:id' do
+    delete '/categories/:id' do
         category = Category.find(params[:id])
-        category.destroy(include: :crafts)
+        category.destroy
     end
 
 end
