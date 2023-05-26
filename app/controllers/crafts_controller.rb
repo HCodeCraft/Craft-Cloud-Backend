@@ -18,10 +18,12 @@ class CraftsController < ApplicationController
             difficulty: params[:difficulty],
             description: params[:description],
             notes: params[:notes],
+            link: params[:link],
             completed: params[:completed]
         )
         craft.to_json
     end
+
 
     delete '/crafts/:id' do
         craft = Craft.find(params[:id])
@@ -36,6 +38,7 @@ class CraftsController < ApplicationController
             description: params[:description],
             difficulty: params[:difficulty],
             notes: params[:notes],
+            link: params[:link],
             completed: params[:completed],
             category_id: category.id
         )
