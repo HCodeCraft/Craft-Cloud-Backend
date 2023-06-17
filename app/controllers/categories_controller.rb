@@ -7,7 +7,6 @@ class CategoriesController < ApplicationController
         categories.to_json(include: :crafts)
     end
 
-    # For individual category page?
     get '/categories/:id' do
         category = Category.find(params[:id])
         category.to_json(include: :crafts)
@@ -23,7 +22,6 @@ class CategoriesController < ApplicationController
         category.to_json(include: :crafts)
     end
 
-    # be able to edit category? 
     patch '/categories/:id' do
         category = Category.find(params[:id])
         category.update(

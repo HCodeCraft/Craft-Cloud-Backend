@@ -4,4 +4,9 @@ has_many :crafts
 
 
 
+
+
+
+
+
 end
